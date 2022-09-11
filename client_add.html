@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить заявку</title>
+    <link rel="stylesheet" href="/static/client_see.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+<div class="form">
+
+<div class="cont">
+    <a href="{{ url_for('main') }}"><button>На главную</button></a>
+</div>
+    <div class="message">
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{cat}}">{{msg}}</div>
+        {% endfor %}
+    </div>
+    <div class="form_message">
+        <form action="" method="post" class="form_action">
+            <h4 style="margin-bottom: 10px">Оставить заявку</h4>
+            <label class="text_start">Фамилия имя</label><input class="textarea" type="text" autocomplete="off" name="name" maxlength="20" value="" required/><br>
+            <label class="text_start">Возраст</label><input class="textarea" type="text" autocomplete="off" name="age" maxlength="20" value="" required/><br>
+            <label class="text_start">Телефон</label><input class="textarea" type="text" autocomplete="off" maxlength="20" name="phone" value="" required/><br>
+            <label class="text_start">Адрес</label><input class="textarea" type="text" autocomplete="off" maxlength="20" name="address" value="" required/><br>
+            <label class="text_start">Дата</label><input class="textarea" type="date" autocomplete="off" maxlength="20" name="date" value="" required/><br>
+            <label class="text_start">Время</label><input class="textarea" type="time" autocomplete="off" maxlength="20" name="time" value="" required/><br>
+            <input type="submit" value="Отправить"/><br>
+        </form>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

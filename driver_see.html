@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заявки клиентов</title>
+    <link rel="stylesheet" href="/static/client_see.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+<h3>Заявки клиентов</h3>
+
+<div class="cont">
+<a href="{{ url_for('main') }}"><button>На главную</button></a>
+</div>
+<div class="container">
+    <div class="req">
+        {% for p in req %}
+        <div class="row">
+            <article class="req">
+                <div class="req-info">
+                    <p class="name">{{ p[1] }}</p>
+                    <p class="age">{{ p[2] }}</p>
+                    <p class="phone">{{ p[3] }}</p>
+                    <p class="date">{{ p[4] }}</p>
+                    <p class="time">{{ p[5] }}</p>
+                    <p class="address">{{ p[6] }}</p>
+                </div>
+            </article>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
